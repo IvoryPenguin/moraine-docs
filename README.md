@@ -1,4 +1,15 @@
 # Your [DocPad](http://docpad.org) Project
 
-## License
-Copyright &copy; 2015+ All rights reserved.
+## Start
+
+```
+npm install 
+bower install
+docpad run
+```
+
+## Push changes
+
+```
+docpad deploy-ghpages --env static
+```
