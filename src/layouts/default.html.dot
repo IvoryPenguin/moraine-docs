@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{= it.getSiteTitle() }}</title>
+    <meta name="description" content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    {{= it.getBlock('styles').add(it.site.styles).toHTML() }}
+
+</head>
+<body>
+
+    <div class="ui inverted {{= it.site.color }} segment">
+
+        <div id="navigation" class="ui inverted {{= it.site.color }} menu">
+            
+            <a href="index.html" class="item">
+                moraine
+            </a>
+
+            <div class="right menu">
+                {{ for(var index in it.site.sections) { }}
+                    <a href="{{= it.site.sections[index].link }}" class="item">
+                        {{= it.site.sections[index].name }}
+                    </a>
+                {{ } }}
+            </div>
+        </div>
+
+    	{{? it.document.masthead }}
+    	    <div id="masthead" class="ui inverted {{= it.site.color }} center aligned segment">
+                <h1>{{= it.getSiteTitle() }}</h1>
+                <h2>{{= it.site.description }}</h2>
+                <a href="about.html" class="ui inverted button">Learn More</a>
+                <a href="http://www.github.com/ivorypenguin/moraine" class="ui button"><i class="github alternate icon"></i> Github</a>
+    		</div>
+    	{{?}}
+
+    </div>
+	
+
+    <div class="ui page grid">
+        <div class="four wide column">
+
+        </div>
+        <div class="twelve wide column">
+            {{= it.content }}
+        </div>
+    </div>
+
+    <div class="ui page grid">
+        <div class="ui divider"></div>
+        <div class="sixteen wide column">
+            &copy;{{=it.moment().format('YYYY')}} Ivory Penguin, LLC.
+        </div>
+    </div>
+
+
+	{{= it.getBlock('scripts').add(it.site.scripts).toHTML() }}
+    
+</body>
+</html>

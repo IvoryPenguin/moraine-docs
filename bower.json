@@ -1,0 +1,11 @@
+{
+  "name": "moraine",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "semantic-ui": "~1.6.2"
+  },
+  "devDependencies": {}
+}
